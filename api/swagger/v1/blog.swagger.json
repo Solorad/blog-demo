@@ -1,0 +1,110 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "blog.proto",
+    "version": "version not set"
+  },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "blogBlog": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "author_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        }
+      }
+    },
+    "blogCreateBlogResponse": {
+      "type": "object",
+      "properties": {
+        "blog": {
+          "$ref": "#/definitions/blogBlog"
+        }
+      }
+    },
+    "blogDeleteBlogResponse": {
+      "type": "object",
+      "properties": {
+        "blog_id": {
+          "type": "string"
+        }
+      }
+    },
+    "blogListBlogResponse": {
+      "type": "object",
+      "properties": {
+        "blog": {
+          "$ref": "#/definitions/blogBlog"
+        }
+      }
+    },
+    "blogReadBlogResponse": {
+      "type": "object",
+      "properties": {
+        "blog": {
+          "$ref": "#/definitions/blogBlog"
+        }
+      }
+    },
+    "blogUpdateBlogResponse": {
+      "type": "object",
+      "properties": {
+        "blog": {
+          "$ref": "#/definitions/blogBlog"
+        }
+      }
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "type_url": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string",
+          "format": "byte"
+        }
+      }
+    },
+    "runtimeStreamError": {
+      "type": "object",
+      "properties": {
+        "grpc_code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "http_code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "http_status": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}
